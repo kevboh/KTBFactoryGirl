@@ -110,6 +110,13 @@
     
     KTBFeed *feed = [KTBFactoryGirl build:@"KTBFeed"];
     NSLog(@"feed: %@", feed);
+    
+    XCTAssert([[feed.items[13] itemID] isEqual:@14], @"Our 14th item should have ID 14.");
+}
+
+- (void)testJSON {
+    NSString *json = [KTBFactoryGirl JSONFor:@"FeedItem" options:0 error:NULL];
+    NSLog(@"json: %@", json);
 }
 
 @end

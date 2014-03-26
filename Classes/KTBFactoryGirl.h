@@ -1,6 +1,6 @@
 //
 //  KTBFactoryGirl.h
-//  Airendipity
+//  Little Spindle, LLC
 //
 //  Created by Kevin Barrett on 2/12/14.
 //
