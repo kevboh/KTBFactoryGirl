@@ -1,0 +1,14 @@
+PODS:
+  - KTBFactoryGirl (0.0.1)
+
+DEPENDENCIES:
+  - KTBFactoryGirl (from `../KTBFactoryGirl.podspec`)
+
+EXTERNAL SOURCES:
+  KTBFactoryGirl:
+    :path: ../KTBFactoryGirl.podspec
+
+SPEC CHECKSUMS:
+  KTBFactoryGirl: ee41a1df3f177444f13ca358987f62fca1891cd3
+
+COCOAPODS: 0.29.0

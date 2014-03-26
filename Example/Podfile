@@ -1,0 +1,3 @@
+target "KTBFactoryGirlExampleTests" do
+  pod "KTBFactoryGirl", :path => "../KTBFactoryGirl.podspec"
+end
