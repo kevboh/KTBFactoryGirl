@@ -25,20 +25,59 @@ KTBFactoryGirl is an attempt to get something like [ruby's factory_girl](https:/
         feedItem[@"deleted"]        = @NO;
     }];
 
+    // Okay, let's define a feed that will contain feed items.
+    [KTBFactoryGirl define:@"ServerFeed" as:^(KTBFactoryGirl *feed) {
+        // Set some metadata.
+        feed[@"timestamp"]          = @([[NSDate date] timeIntervalSince1970]);
+        feed[@"user_id"]            = @123;
+        
+        // Give the feed 3 feed items. Feed items have a special "ordinal" property determined by order in the feed.
+        [feed set:@"feed_items" withFactory:@"ServerFeedItem" count:3 setter:^(KTBFactoryGirl *feedItem, NSInteger itemIndex) {
+            feedItem[@"ordinal"]    = @(itemIndex);
+        }];
+    }];
+
 and then do this:
 
-    NSString *json = [KTBFactoryGirl JSONFor:@"ServerFeedItem" options:0 error:NULL];
+    NSString *json = [KTBFactoryGirl JSONFor:@"ServerFeed" options:0 error:NULL];
 
 to get this:
 
     {
-      "deleted": false,
       "user_id": 123,
-      "text": "This is my super interesting feed item text!",
-      "id": 1,
-      "likes_count": 12,
-      "comments_count": 50,
-      "url": "http://feeds-r-us.com/i/1"
+      "feed_items": [
+        {
+          "deleted": false,
+          "user_id": 123,
+          "text": "This is my super interesting feed item text!",
+          "id": 1,
+          "likes_count": 12,
+          "comments_count": 50,
+          "ordinal": 0,
+          "url": "http://feeds-r-us.com/i/1"
+        },
+        {
+          "deleted": false,
+          "user_id": 123,
+          "text": "This is my super interesting feed item text!",
+          "id": 2,
+          "likes_count": 12,
+          "comments_count": 50,
+          "ordinal": 1,
+          "url": "http://feeds-r-us.com/i/2"
+        },
+        {
+          "deleted": false,
+          "user_id": 123,
+          "text": "This is my super interesting feed item text!",
+          "id": 3,
+          "likes_count": 12,
+          "comments_count": 50,
+          "ordinal": 2,
+          "url": "http://feeds-r-us.com/i/3"
+        }
+      ],
+      "timestamp": 1395878480.441685
     }
 
 I plan on adding examples to show how you can generate NSObject subclasses (using the `build` set of methods) and NSManagedObject insertions (using the `insert` set of methods). Along with, you know, docs and stuff. And tests.
