@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.license               = 'MIT'
   s.author                = { "Kevin Barrett" => "kevin@littlespindle.com" }
   s.social_media_url      = "https://twitter.com/kevboh"
-  s.source           = { :git => "http://EXAMPLE/NAME.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/kevboh/KTBFactoryGirl.git", :tag => s.version.to_s }
   s.requires_arc = true
   s.source_files = 'Classes'
   s.resources = 'Assets'
