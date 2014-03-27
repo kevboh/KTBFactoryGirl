@@ -115,7 +115,7 @@
 }
 
 - (void)testJSON {
-    NSString *json = [KTBFactoryGirl JSONFor:@"FeedItem" options:0 error:NULL];
+    NSString *json = [KTBFactoryGirl JSONFor:@"Feed" options:0 error:NULL];
     NSLog(@"json: %@", json);
 }
 

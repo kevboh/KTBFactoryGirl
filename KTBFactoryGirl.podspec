@@ -23,6 +23,10 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes'
   s.resources = 'Assets'
 
+  s.platform = :ios
+  s.ios.deployment_target = "5.0"
+  # spec.osx.deployment_target = "10.8"
+
   # s.ios.exclude_files = 'Classes/osx'
   # s.osx.exclude_files = 'Classes/ios'
   # s.public_header_files = 'Classes/**/*.h'

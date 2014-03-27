@@ -3,7 +3,7 @@
 [![Version](http://cocoapod-badges.herokuapp.com/v/KTBFactoryGirl/badge.png)](http://cocoadocs.org/docsets/KTBFactoryGirl)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/KTBFactoryGirl/badge.png)](http://cocoadocs.org/docsets/KTBFactoryGirl)
 
-KTBFactoryGirl is an attempt to get something like [ruby's factory_girl](https://github.com/thoughtbot/factory_girl) on iOS and OS X. I don't like bundling gigantic JSON blobs in my test bundles, nor do I like manually setting properties on 20 managed objects when I test Core Data entities. KTBFactoryGirl allows you to predefine factories which act as object templates that can be rapidly built out into NSObject subclasses, NSManagedObjects (or subclasses thereof) that have been inserted into contexts, or JSON blobs. So you can write this:
+KTBFactoryGirl is an attempt to get something like [ruby's factory_girl](https://github.com/thoughtbot/factory_girl) on iOS (and OS X, once I test it). I don't like bundling gigantic JSON blobs in my test bundles, nor do I like manually setting properties on 20 managed objects when I test Core Data entities. KTBFactoryGirl allows you to predefine factories which act as object templates that can be rapidly built out into NSObject subclasses, NSManagedObjects (or subclasses thereof) that have been inserted into contexts, or JSON blobs. So you can write this:
 
     // Define a factory for a server's representation of a news feed item.
     [KTBFactoryGirl define:@"ServerFeedItem" as:^(KTBFactoryGirl *feedItem) {
